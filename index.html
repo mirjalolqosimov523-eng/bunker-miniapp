@@ -2,24 +2,133 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#101216"><title>BUNKER — omon qol!</title>
+<meta name="theme-color" content="#101216"><title>BUNKER вЂ” omon qol!</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 :root{color-scheme:dark;--bg:#101216;--panel:#1a1e25;--line:#303743;--red:#e84b4b;--gold:#f0bd64;--muted:#a6adba}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#252a33 0,#101216 55%);font-family:system-ui,-apple-system,sans-serif;color:#f5f6f8;min-height:100vh}main{max-width:600px;margin:auto;padding:22px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between}.brand{font-size:13px;letter-spacing:4px;color:var(--gold);font-weight:800}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 10px;color:var(--muted);font-size:12px}.hero{padding:28px 0 20px}.eyebrow{color:var(--red);font-size:11px;font-weight:800;letter-spacing:2px}.hero h1{font-size:clamp(36px,10vw,58px);line-height:.95;margin:10px 0 12px;letter-spacing:-2px}.hero p{color:var(--muted);line-height:1.5;margin:0}.panel{background:rgba(26,30,37,.94);border:1px solid var(--line);border-radius:18px;padding:17px;margin:12px 0}.label{display:block;font-size:12px;color:var(--muted);margin:12px 0 7px}input,select{width:100%;border:1px solid var(--line);background:#11141a;color:white;border-radius:12px;padding:13px;font:inherit;outline:none}button{border:0;border-radius:12px;padding:13px 14px;font:inherit;font-weight:750;cursor:pointer}.primary{background:var(--red);color:white;width:100%;margin-top:12px}.secondary{background:#292f39;color:#f5f6f8;border:1px solid #3b4350}.row{display:flex;gap:9px}.row>*{flex:1;min-width:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{padding:14px;background:#151920;border:1px solid var(--line);border-radius:14px}.tile b{display:block;font-size:21px}.tile span{color:var(--muted);font-size:12px}.section-title{font-weight:800;margin:0 0 12px}.hidden{display:none!important}.card{border:1px solid #4a4140;background:linear-gradient(140deg,#272b32,#191c22);border-radius:16px;padding:18px;margin:10px 0}.card .type{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800}.card h3{font-size:25px;margin:8px 0}.card p{margin:6px 0;color:#c4c9d1}.tag{display:inline-block;background:#33303a;border-radius:8px;padding:5px 8px;margin:4px 4px 0 0;font-size:12px}.players{display:flex;flex-wrap:wrap;gap:8px}.player{padding:8px 10px;border-radius:10px;background:#252b34;font-size:13px}.notice{color:var(--muted);font-size:12px;line-height:1.5}.status{padding:10px;border-radius:10px;background:#242a32;color:var(--gold);font-size:13px;margin:10px 0}.vote-btn{width:100%;margin-top:7px;text-align:left}.foot{text-align:center;color:#727b88;font-size:11px;margin-top:24px}
 </style></head><body><main>
-<header class="top"><div class="brand">◈ BUNKER</div><div class="pill" id="tgStatus">Brauzer rejimi</div></header>
-<section class="hero"><div class="eyebrow">FALOKATDAN KEYIN FAQAT TANLANGANLAR</div><h1>OMON<br>QOL.</h1><p>Resurslar cheklangan. Bunkerda joy hamma uchun yetmaydi. O‘zingni isbotla.</p></section>
+<header class="top"><div class="brand">в—€ BUNKER</div><div class="pill" id="tgStatus">Brauzer rejimi</div></header>
+<section class="hero"><div class="eyebrow">FALOKATDAN KEYIN FAQAT TANLANGANLAR</div><h1>OMON<br>QOL.</h1><p>Resurslar cheklangan. Bunkerda joy hamma uchun yetmaydi. OвЂzingni isbotla.</p></section>
 <section id="home">
-<div class="panel"><h2 class="section-title">Yangi o‘yin</h2><label class="label">Isming</label><input id="name" maxlength="20" placeholder="Masalan, Mirjalol"><label class="label">O‘yinchilar soni</label><select id="maxPlayers"><option value="6">6 o‘yinchi</option><option value="8" selected>8 o‘yinchi</option><option value="10">10 o‘yinchi</option><option value="12">12 o‘yinchi</option></select><button class="primary" id="createBtn">＋ XONA YARATISH</button></div>
+<div class="panel"><h2 class="section-title">Yangi oвЂyin</h2><label class="label">Isming</label><input id="name" maxlength="20" placeholder="Masalan, Mirjalol"><label class="label">OвЂyinchilar soni</label><select id="maxPlayers"><option value="6">6 oвЂyinchi</option><option value="8" selected>8 oвЂyinchi</option><option value="10">10 oвЂyinchi</option><option value="12">12 oвЂyinchi</option></select><button class="primary" id="createBtn">пј‹ XONA YARATISH</button></div>
 <div class="panel"><h2 class="section-title">Xonaga kirish</h2><div class="row"><input id="roomCode" maxlength="5" placeholder="XONA KODI"><button class="secondary" id="joinBtn">KIRISH</button></div></div>
-<div class="grid"><div class="tile"><b>6–12</b><span>o‘yinchi</span></div><div class="tile"><b>5</b><span>xususiyat kartasi</span></div></div>
-<div class="notice" style="margin:14px 3px">Hozirgi demo bir qurilmada ishlaydi. Turli telefonlarda haqiqiy birgalikdagi o‘yin uchun Supabase sozlamasi kerak — yo‘riqnoma loyiha ichida.</div>
+<div class="grid"><div class="tile"><b>6вЂ“12</b><span>oвЂyinchi</span></div><div class="tile"><b>5</b><span>xususiyat kartasi</span></div></div>
+<div class="notice" style="margin:14px 3px">Supabase bilan onlayn oвЂyin. Xona kodi orqali doвЂstlaringizni taklif qiling.</div>
 </section>
-<section id="game" class="hidden"><div class="panel"><div class="top"><div><div class="eyebrow">SIZNING XONANGIZ</div><h2 style="margin:6px 0" id="roomHeading">XONA —</h2></div><button class="secondary" id="copyCode">KODNI NUSXALASH</button></div><div class="status" id="gameStatus">O‘yinchilar yig‘ilmoqda</div><div class="players" id="playerList"></div><button class="primary" id="startBtn">🎲 ROLLARNI TARQATISH</button><button class="secondary" style="width:100%;margin-top:8px" id="backBtn">MENYUGA QAYTISH</button></div><div id="myCard" class="card hidden"></div><div class="panel hidden" id="discussion"><h3 class="section-title">Ovoz berish</h3><p class="notice">Bunkerda qolishi kerak bo‘lmagan o‘yinchini tanlang. Demo rejimida ovoz sizning qurilmangizda hisoblanadi.</p><div id="voteList"></div><button class="primary" id="voteResult">OVOZ NATIJASINI KO‘RISH</button><div id="result" class="status hidden"></div></div></section>
-<div class="foot">BUNKER • O‘ZBEKCHA MINI APP • DEMO VERSIYA</div></main>
+<section id="game" class="hidden"><div class="panel"><div class="top"><div><div class="eyebrow">SIZNING XONANGIZ</div><h2 style="margin:6px 0" id="roomHeading">XONA вЂ”</h2></div><button class="secondary" id="copyCode">KODNI NUSXALASH</button></div><div class="status" id="gameStatus">OвЂyinchilar yigвЂilmoqda</div><div class="players" id="playerList"></div><button class="primary" id="startBtn">рџЋІ ROLLARNI TARQATISH</button><button class="secondary" style="width:100%;margin-top:8px" id="backBtn">MENYUGA QAYTISH</button></div><div id="myCard" class="card hidden"></div><div class="panel hidden" id="discussion"><h3 class="section-title">Ovoz berish</h3><p class="notice">Bunkerda qolishi kerak boвЂlmagan oвЂyinchini tanlang. Demo rejimida ovoz sizning qurilmangizda hisoblanadi.</p><div id="voteList"></div><button class="primary" id="voteResult">OVOZ NATIJASINI KOвЂRISH</button><div id="result" class="status hidden"></div></div></section>
+<div class="foot">BUNKER вЂў OвЂZBEKCHA ONLAYN MINI APP</div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const tg=window.Telegram?.WebApp; if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#101216');tg.setBackgroundColor('#101216')}catch(e){};if(tg.initDataUnsafe?.user?.first_name){document.querySelector('#name').value=tg.initDataUnsafe.user.first_name;document.querySelector('#tgStatus').textContent='Telegram ichida'}}
-const $=s=>document.querySelector(s);let room=null,me=null,voted=null;const professions=['Shifokor','Muhandis','Agronom','Oshpaz','Dasturchi','Qutqaruvchi','O‘qituvchi','Haydovchi','Biolog','Elektrik','Psixolog','Harbiy'];const health=['Sog‘lom','Astma','Qo‘li singan','Ko‘rish qobiliyati past','Allergiyasi bor','Bardoshli'];const traits=['Juda xotirjam','Yetakchi','Sir saqlaydi','Vahimachi','Kuzatuvchan','Ishonuvchan','Chaqqon','Bahslashishni yaxshi ko‘radi'];const items=['Tibbiy sumka','Urug‘lar to‘plami','Asboblar qutisi','Konserva 3 dona','Radioaloqa moslamasi','Suv filtri','Fonarik','Bo‘sh qo‘l'];const secrets=['Bunker xaritasini biladi','Suv zaxirasi kamligini biladi','Oldin boshpanada ishlagan','Muhim sirni yashiryapti','Hech qanday siri yo‘q','Tashqarida tirik qolgan qarindoshi bor'];const disasters=['Global muzlash','Zaharli chang buluti','Noma’lum epidemiya','Kuchli quyosh bo‘roni','Suv toshqini','Oziq-ovqat inqirozi'];
-function pick(a){return a[Math.floor(Math.random()*a.length)]}function code(){return Math.random().toString(36).slice(2,7).toUpperCase()}function showGame(){ $('#home').classList.add('hidden');$('#game').classList.remove('hidden');render()}function render(){if(!room)return;$('#roomHeading').textContent='XONA '+room.code;$('#gameStatus').textContent=room.started?'Falokat: '+room.disaster:'O‘yinchilar yig‘ilmoqda · '+room.players.length+'/'+room.max;$('#playerList').innerHTML=room.players.map(p=>`<span class="player">${esc(p.name)}${p.id===me.id?' (siz)':''}</span>`).join('');$('#startBtn').textContent=room.started?'ROLLAR TARQATILDI':'🎲 ROLLARNI TARQATISH';$('#startBtn').disabled=room.started||room.players.length<3;$('#startBtn').style.opacity=$('#startBtn').disabled?'.55':'1';if(room.started){$('#myCard').classList.remove('hidden');$('#discussion').classList.remove('hidden');const c=me.card;$('#myCard').innerHTML=`<div class="type">SIZNING MAXFIY KARTANGIZ</div><h3>${esc(c.profession)}</h3><p>Yosh: <b>${c.age}</b></p><p>Sog‘liq: <b>${esc(c.health)}</b></p><p>Xarakter: <b>${esc(c.trait)}</b></p><p>Bagaj: <b>${esc(c.item)}</b></p><p>Sir: <b>${esc(c.secret)}</b></p><div class="notice">Kartangizni muhokama davomida xohlagan tartibda oching.</div>`;$('#voteList').innerHTML=room.players.filter(p=>p.id!==me.id).map(p=>`<button class="secondary vote-btn" data-id="${p.id}">${voted===p.id?'🔴 ':'🗳️ '}${esc(p.name)}</button>`).join('');document.querySelectorAll('.vote-btn').forEach(b=>b.onclick=()=>{voted=b.dataset.id;render()})}}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function makePlayer(name){return{id:Math.random().toString(36).slice(2),name,card:null}}function enterRoom(r,p){room=r;me=p;showGame()}$('#createBtn').onclick=()=>{const name=$('#name').value.trim()||'O‘yinchi';room={code:code(),max:+$('#maxPlayers').value,started:false,disaster:null,players:[]};me=makePlayer(name);room.players.push(me);enterRoom(room,me)};$('#joinBtn').onclick=()=>{const c=$('#roomCode').value.trim().toUpperCase();alert(c?'Demo rejimida boshqa qurilmadagi xonaga ulanib bo‘lmaydi. Haqiqiy onlayn xonalar uchun README dagi Supabase sozlamasi kerak.':'Avval xona kodini kiriting.')} ;$('#copyCode').onclick=async()=>{try{await navigator.clipboard.writeText(room.code);$('#copyCode').textContent='NUSXALANDI ✓'}catch(e){alert('Xona kodi: '+room.code)}};$('#startBtn').onclick=()=>{if(room.players.length<3)return;room.started=true;room.disaster=pick(disasters);room.players.forEach(p=>p.card={profession:pick(professions),age:18+Math.floor(Math.random()*48),health:pick(health),trait:pick(traits),item:pick(items),secret:pick(secrets)});render()};$('#voteResult').onclick=()=>{if(!voted){alert('Avval bir o‘yinchini tanlang.');return}const p=room.players.find(x=>x.id===voted);$('#result').classList.remove('hidden');$('#result').textContent='Demo ovozi: '+p.name+' bunker uchun eng kam mos deb tanlandi. Haqiqiy o‘yinda ovozlar barcha ishtirokchilardan yig‘iladi.'};$('#backBtn').onclick=()=>{room=null;me=null;voted=null;$('#game').classList.add('hidden');$('#home').classList.remove('hidden');$('#myCard').classList.add('hidden');$('#discussion').classList.add('hidden');$('#result').classList.add('hidden')};
+// 1) Replace the two values below with your Supabase Project URL and Publishable key.
+const SUPABASE_URL = 'https://ewtnqqvpfwbkizxsgell.supabase.co/rest/v1/';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_XzsSUm6lz9GHmM9sJW1PgQ_iyDCu2pA';
+
+const tg=window.Telegram?.WebApp;
+if(tg){tg.ready();tg.expand();try{tg.setHeaderColor('#101216');tg.setBackgroundColor('#101216')}catch(e){};if(tg.initDataUnsafe?.user?.first_name){document.querySelector('#name').value=tg.initDataUnsafe.user.first_name;document.querySelector('#tgStatus').textContent='Telegram ichida'}}
+const $=s=>document.querySelector(s);
+const professions=['Shifokor','Muhandis','Agronom','Oshpaz','Dasturchi','Qutqaruvchi','OвЂqituvchi','Haydovchi','Biolog','Elektrik','Psixolog','Harbiy'];
+const health=['SogвЂlom','Astma','QoвЂli singan','KoвЂrish qobiliyati past','Allergiyasi bor','Bardoshli'];
+const traits=['Juda xotirjam','Yetakchi','Sir saqlaydi','Vahimachi','Kuzatuvchan','Ishonuvchan','Chaqqon','Bahslashishni yaxshi koвЂradi'];
+const items=['Tibbiy sumka','UrugвЂlar toвЂplami','Asboblar qutisi','Konserva 3 dona','Radioaloqa moslamasi','Suv filtri','Fonarik','BoвЂsh qoвЂl'];
+const secrets=['Bunker xaritasini biladi','Suv zaxirasi kamligini biladi','Oldin boshpanada ishlagan','Muhim sirni yashiryapti','Hech qanday siri yoвЂq','Tashqarida tirik qolgan qarindoshi bor'];
+const disasters=['Global muzlash','Zaharli chang buluti','NomaвЂ™lum epidemiya','Kuchli quyosh boвЂroni','Suv toshqini','Oziq-ovqat inqirozi'];
+let db=null,room=null,me=null,voted=null,roomChannel=null,playersChannel=null;
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function code(){return Math.random().toString(36).slice(2,7).toUpperCase()}
+function token(){try{return crypto.randomUUID()}catch(e){return 'p'+Date.now().toString(36)+Math.random().toString(36).slice(2)}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function showGame(){ $('#home').classList.add('hidden');$('#game').classList.remove('hidden');render() }
+function showMessage(msg){alert(msg)}
+function configReady(){return SUPABASE_URL.startsWith('https://') && SUPABASE_PUBLISHABLE_KEY.startsWith('sb_publishable_')}
+function initDb(){
+  if(!configReady()){
+    $('#tgStatus').textContent='Sozlash kerak';
+    $('.notice').textContent='Supabase hali ulanmagan. GitHubвЂ™dagi index.html faylida SUPABASE_URL va SUPABASE_PUBLISHABLE_KEY qiymatlarini almashtirish kerak.';
+    $('#createBtn').disabled=true;$('#joinBtn').disabled=true;return false;
+  }
+  if(!window.supabase){showMessage('Supabase kutubxonasi yuklanmadi. Internetni tekshirib sahifani yangilang.');return false;}
+  db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+  $('#tgStatus').textContent='Onlayn rejim';
+  $('.notice').textContent='Onlayn rejim: xona yarating yoki doвЂstingiz bergan kod orqali qoвЂshiling.';
+  return true;
+}
+async function loadRoom(roomCode){
+  if(!db||!roomCode||!window.__bunkerToken)return;
+  const {data,error}=await db.rpc('bunker_get_room',{p_room_code:roomCode,p_player_token:window.__bunkerToken});
+  if(error){console.error(error);return;}
+  if(!data)return;
+  room={id:null,code:data.room_code,max:data.max_players||8,started:!!data.started,disaster:data.disaster||null,hostId:null,players:(data.players||[]).map(p=>({id:p.id,name:p.nickname,card:p.card_data||null,is_host:!!p.is_host}))};
+  me=room.players.find(p=>p.id===data.my_player_id)||null;
+  if(!me)return;
+  window.__bunkerPlayerId=me.id;window.__bunkerRoomCode=room.code;
+  showGame();
+  if(data.votes_revealed){
+    $('#result').classList.remove('hidden');
+    const counts=(data.vote_counts||[]).map(v=>`${esc(v.nickname)}: ${v.votes} ovoz`).join(' В· ');
+    $('#result').textContent='Ovoz natijasi вЂ” '+(counts||'Ovozlar teng yoki natija yoвЂq');
+  }
+  render();
+}
+function subscribeRoom(roomCode){
+  if(window.__bunkerPoll)clearInterval(window.__bunkerPoll);
+  window.__bunkerPoll=setInterval(()=>loadRoom(roomCode),3000);
+}
+function render(){
+  if(!room)return;
+  $('#roomHeading').textContent='XONA '+room.code;
+  $('#gameStatus').textContent=room.started?'Falokat: '+(room.disaster||'aniqlanmoqda'):'OвЂyinchilar yigвЂilmoqda В· '+room.players.length+'/'+room.max;
+  $('#playerList').innerHTML=room.players.map(p=>`<span class="player">${esc(p.name)}${p.id===me?.id?' (siz)':''}${p.is_host?' в…':''}</span>`).join('');
+  const isHost=!!me?.is_host;
+  $('#startBtn').textContent=room.started?'ROLLAR TARQATILDI':'рџЋІ ROLLARNI TARQATISH';
+  $('#startBtn').disabled=room.started||room.players.length<3||!isHost;
+  $('#startBtn').style.opacity=$('#startBtn').disabled?'.55':'1';
+  if(!isHost&&!room.started)$('#gameStatus').textContent+=' В· Boshlovchini kuting';
+  if(room.started){
+    $('#myCard').classList.remove('hidden');$('#discussion').classList.remove('hidden');
+    const c=me?.card||{};
+    $('#myCard').innerHTML=`<div class="type">SIZNING MAXFIY KARTANGIZ</div><h3>${esc(c.profession||'Kartangiz tayyorlanmoqda')}</h3><p>Yosh: <b>${esc(c.age||'вЂ”')}</b></p><p>SogвЂliq: <b>${esc(c.health||'вЂ”')}</b></p><p>Xarakter: <b>${esc(c.trait||'вЂ”')}</b></p><p>Bagaj: <b>${esc(c.item||'вЂ”')}</b></p><p>Sir: <b>${esc(c.secret||'вЂ”')}</b></p><div class="notice">Kartangizni muhokama davomida xohlagan tartibda oching.</div>`;
+    $('#voteList').innerHTML=room.players.filter(p=>p.id!==me?.id).map(p=>`<button class="secondary vote-btn" data-id="${p.id}">${voted===p.id?'рџ”ґ ':'рџ—іпёЏ '}${esc(p.name)}</button>`).join('');
+    document.querySelectorAll('.vote-btn').forEach(b=>b.onclick=()=>{voted=b.dataset.id;render()});
+  }else{$('#myCard').classList.add('hidden');$('#discussion').classList.add('hidden');}
+}
+async function createRoom(){
+  if(!db)return;const name=$('#name').value.trim()||'OвЂyinchi';const max=Number($('#maxPlayers').value);
+  $('#createBtn').disabled=true;
+  try{
+    const {data,error}=await db.rpc('bunker_create_room',{p_nickname:name,p_max_players:max});if(error)throw error;
+    window.__bunkerToken=data.player_token;window.__bunkerPlayerId=data.player_id;window.__bunkerRoomCode=data.room_code;
+    await loadRoom(data.room_code);subscribeRoom(data.room_code);
+  }catch(e){console.error(e);showMessage('Xona yaratilmadi: '+(e.message||e));}
+  finally{$('#createBtn').disabled=false;}
+}
+async function joinRoom(){
+  if(!db)return;const name=$('#name').value.trim()||'OвЂyinchi';const c=$('#roomCode').value.trim().toUpperCase();if(!c){showMessage('Avval xona kodini kiriting.');return;}
+  $('#joinBtn').disabled=true;
+  try{
+    const {data,error}=await db.rpc('bunker_join_room',{p_room_code:c,p_nickname:name});if(error)throw error;
+    window.__bunkerToken=data.player_token;window.__bunkerPlayerId=data.player_id;window.__bunkerRoomCode=data.room_code;
+    await loadRoom(data.room_code);subscribeRoom(data.room_code);
+  }catch(e){console.error(e);showMessage('Xonaga kirib boвЂlmadi: '+(e.message||e));}
+  finally{$('#joinBtn').disabled=false;}
+}
+async function startGame(){
+  if(!db||!room||!me?.is_host||room.players.length<3)return;
+  try{
+    const {error}=await db.rpc('bunker_start_game',{p_room_code:room.code,p_player_token:window.__bunkerToken});if(error)throw error;
+    await loadRoom(room.code);
+  }catch(e){console.error(e);showMessage('OвЂyin boshlanmadi: '+(e.message||e));}
+}
+async function voteResult(){
+  if(!db||!room||!me)return;if(!voted){showMessage('Avval bir oвЂyinchini tanlang.');return;}
+  try{
+    const {error}=await db.rpc('bunker_cast_vote',{p_room_code:room.code,p_player_token:window.__bunkerToken,p_target_id:voted});if(error)throw error;
+    $('#result').classList.remove('hidden');$('#result').textContent='Ovozingiz saqlandi. Barcha oвЂyinchilar ovoz bergach, natija avtomatik koвЂrinadi.';
+    await loadRoom(room.code);
+  }catch(e){console.error(e);showMessage('Ovoz saqlanmadi: '+(e.message||e));}
+}
+$('#createBtn').onclick=createRoom;$('#joinBtn').onclick=joinRoom;
+$('#copyCode').onclick=async()=>{if(!room)return;try{await navigator.clipboard.writeText(room.code);$('#copyCode').textContent='NUSXALANDI вњ“'}catch(e){showMessage('Xona kodi: '+room.code)}};
+$('#startBtn').onclick=startGame;$('#voteResult').onclick=voteResult;
+$('#backBtn').onclick=()=>{if(window.__bunkerPoll)clearInterval(window.__bunkerPoll);room=null;me=null;voted=null;window.__bunkerPlayerId=null;window.__bunkerRoomCode=null;$('#game').classList.add('hidden');$('#home').classList.remove('hidden');$('#myCard').classList.add('hidden');$('#discussion').classList.add('hidden');$('#result').classList.add('hidden')};
+initDb();
 </script></body></html>
